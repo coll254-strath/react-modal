@@ -1,8 +1,6 @@
 const Modal = () => {
- 
-
   const modalRef = useRef();
-
+  
   const handleClickOutside = (event) => {
     if (modalRef.current && !modalRef.current.contains(event.target)) {
       setIsVisible(false);
@@ -11,9 +9,14 @@ const Modal = () => {
 
   // Modal JSX
     return (
+    <Modal isVisible={showModal} toggleModal={() => setShowModal(false)} />
     <div className="modal-backdrop" style={{ display: isVisible ? 'inline-block' : 'none' }} ref={modalRef}>
       <div className="modal-content">
         {/* Modal Body Here */}
+     
+  
+
+ 
       </div>
     </div>
   );
